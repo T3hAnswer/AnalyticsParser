@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>dotnet-AnalyticsParser-4EE46DBC-2434-4A8F-955D-5D116353B815</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\FileGenerator</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="completed\**" />
+    <Compile Remove="email\**" />
+    <Compile Remove="new\**" />
+    <Content Remove="completed\**" />
+    <Content Remove="email\**" />
+    <Content Remove="new\**" />
+    <EmbeddedResource Remove="completed\**" />
+    <EmbeddedResource Remove="email\**" />
+    <EmbeddedResource Remove="new\**" />
+    <None Remove="completed\**" />
+    <None Remove="email\**" />
+    <None Remove="new\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+  </ItemGroup>
+</Project>
